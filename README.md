@@ -125,6 +125,34 @@ To run the project, the following must be installed on your system:
 
 ---
 
+## 🗄️ Database Configuration
+
+Before running the project, you must create a MySQL database and configure its connection.
+
+Open the following file:
+
+```text
+store/settings.py
+```
+
+Update the `DATABASES` configuration:
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "your_database_name",
+        "USER": "root",
+        "PASSWORD": "your_password",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
+    }
+}
+```
+
+> **Note:** The database must already exist before running the startup script.  
+> After configuring the database, simply run `startcode.sh` (Linux) or `startcode1.bat` (Windows). The script will automatically install dependencies, apply migrations, seed initial data, collect static files, generate SSL certificates, and start all required services.
+
 ## 🚀 Running the Project
 
 ## 🖥️ 1. Virtual Environment Setup (Backend)
